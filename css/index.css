@@ -185,14 +185,14 @@ nav a.nav-link:hover {
 .about-grid {
     display: flex;
     align-items: flex-start; /* Aligns content to the top of the image */
-    gap: 40px; /* Reduced gap to standard */
+    gap: 80px; /* Reduced gap to standard */
     flex-wrap: wrap;
     max-width: 1000px; /* Constrains the width properly */
     margin: 0 auto;
     text-align: left; 
     /* FIX: Removed excessive padding from the grid itself */
     padding: 40px 0; 
-    justify-content: center;
+    justify-content: space-between;
 }
 .about-grid p{
     /* FIX: Changed flex-basis to simple flex to allow for balanced growth */
@@ -210,9 +210,11 @@ nav a.nav-link:hover {
     margin: 0; 
     box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5); 
     flex-shrink: 0;
+    flex-basis: 250px;
 }
 .about-grid >:not(img){
     flex:1;
+    max-width: 600px;
 }
 
 
