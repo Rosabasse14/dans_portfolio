@@ -1,23 +1,21 @@
 /* --- 1. GLOBAL STYLES & RESET --- */
 *, *::before, *::after {
-    /* Ensures padding and border are included in the element's total width and height */
     box-sizing: border-box; 
     margin: 0;
     padding: 0;
 }
 
 body {
-    /* Set the default background to a soft off-white (for the alternating pattern) */
     background-color: #f7f3f0; 
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333; /* Dark, professional text color */
+    color: #333; 
     line-height: 1.6;
-    scroll-behavior: smooth; /* Smooth scrolling for the one-page links */
+    scroll-behavior: smooth; 
 }
 
-/* --- 2. TYPOGRAPHY & TEXT STYLES --- */
+/* --- 2. TYPOGRAPHY & TEXT STYLES (CRITICAL: RESTORED TO READABLE SIZES) --- */
 h1 {
-    font-size: 3.5rem; /* Use rem for better scaling */
+    font-size: 3.5rem; 
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     color: #432818; 
@@ -26,21 +24,23 @@ h1 {
 }
 
 h2 {
-    color: #ce4257; /* Accent color */
+    color: #ce4257; 
     font-size: 2.25rem;
     margin-bottom: 30px;
     text-align: center;
     text-transform: capitalize;
 }
 
+/* FIX: Reduced h3 font size from 2rem to standard 1.5rem for better balance */
 h3 {
-    font-size: 2rem;
+    font-size: 1.5rem; 
     color: #432818;
     margin-bottom: 10px;
 }
 
+/* FIX: Reduced paragraph font size from 1.75rem to standard 1.1rem for readability */
 p {
-    font-size: 1.75rem; /* Highly readable base size */
+    font-size: 1.1rem; 
     margin-bottom: 1rem;
 }
 
@@ -52,9 +52,10 @@ p {
     color: #432818;
 }
 
+/* FIX: Reduced list font size from 1.5rem to standard 1.1rem for readability */
 ul {
-    font-size: 1.5rem; 
-    list-style: none; /* Remove default bullets for cleaner list presentation */
+    font-size: 1.1rem; 
+    list-style: none; 
     padding-left: 0; 
 }
 
@@ -64,9 +65,9 @@ li {
 
 /* --- 3. HEADER & NAVIGATION (Sticky Navbar) --- */
 header {
-    background-color: #fff; /* White header for a clean look */
+    background-color: #fff; 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Keeps the navbar visible when scrolling */
+    position: sticky; 
     top: 0;
     z-index: 1000;
 }
@@ -74,20 +75,19 @@ header {
 .header-content {
     display: flex;
     justify-content: space-between; 
-    
+    align-items: center; /* Ensures vertical alignment */
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px 20px;
 }
 
+/* FIX: Reduced logo/nav link sizes back to standard professional sizes */
 .logo {
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1.25rem; 
     font-weight: bold;
     color: #432818;
     transition: color 0.3s;
-    text-align: left;
-    padding: 0px;
 }
 
 .logo:hover {
@@ -95,15 +95,13 @@ header {
 }
 
 nav a.nav-link {
-    display: inline-block;
     text-decoration: none;
     color: #432818;
-    padding: 8px 20px;
-    font-size: 1.75rem;
-    transition: color 0.3s, background-color 0.3s ease;
+    padding: 8px 15px; 
+    font-size: 1rem; 
+    transition: color 0.3s, background-color 0.3s;
     border-radius: 4px;
     font-weight: 500;
-    text-align: right;
 }
 
 nav a.nav-link:hover {
@@ -115,24 +113,25 @@ nav a.nav-link:hover {
 .button {
     display: inline-block;
     padding: 12px 25px;
-    font-size: 1.5rem;
+    /* FIX: Reduced primary button size */
+    font-size: 1rem; 
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: transform 0.5s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s; 
     cursor: pointer;
     text-align: center;
     margin-top: 20px;
 }
 
 .button.primary {
-    background-color: #ce4257; /* Muted Red */
+    background-color: #ce4257; 
     color: #fff;
     border: none;
 }
 
 .button.secondary {
-    background-color: #432818; /* Dark Brown */
+    background-color: #432818; 
     color: #fff;
     border: none;
     font-size: 0.95rem;
@@ -151,6 +150,13 @@ nav a.nav-link:hover {
     margin: 0 auto;
 }
 
+/* FIX: Ensure content-wrapper is used for centered content in HTML */
+.container-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
 /* Color 1: Original Light Peach */
 #home {
     padding: 150px 0;
@@ -162,7 +168,7 @@ nav a.nav-link:hover {
     background-color: #ffe5d9; 
 }
 
-/* Color 2: Soft Off-White (Default body color, but explicitly set for About/Contact) */
+/* Color 2: Soft Off-White */
 #about {
     background-color: #f7f3f0; 
 }
@@ -173,76 +179,69 @@ nav a.nav-link:hover {
 /* Color 3: Light Sandy Beige */
 #skills {
     background-color: #e5d9d3;
-    
 }
 
-/* --- 6. ABOUT SECTION LAYOUT (Flexbox Grid) --- */
+/* --- 6. ABOUT SECTION LAYOUT (FIXED IMAGE SIZE AND PADDING) --- */
 .about-grid {
     display: flex;
-    align-items: center; /* Aligns items to the top of the container */
-    gap: 30px;
+    align-items: flex-start; /* Aligns content to the top of the image */
+    gap: 40px; /* Reduced gap to standard */
     flex-wrap: wrap;
-    max-width: 10000px;
+    max-width: 1000px; /* Constrains the width properly */
     margin: 0 auto;
-    text-align: left; /* Reset text alignment for paragraphs */
-    padding: 40px 220px;
-    justify-content: space-around;
+    text-align: left; 
+    /* FIX: Removed excessive padding from the grid itself */
+    padding: 40px 0; 
+    justify-content: center;
 }
 .about-grid p{
-    flex-basis: 70%;
-
+    /* FIX: Changed flex-basis to simple flex to allow for balanced growth */
+    flex: 1;
+    min-width: 300px;
 }
 
 .about-grid img {
-    /* Override global image styles for the profile photo */
-    width: 500px;
-    height: 500px;
-    border-radius: 50%; /* Makes the profile picture circular */
+    /* FIX: CRITICAL - Reduced image size from 500px to standard 250px */
+    width: 250px; 
+    height: 250px;
+    border-radius: 50%; 
     border: 5px solid #ce4257;
     object-fit:cover;
-    margin: 0 auto; /* Remove auto margins to fit into flex layout */
-    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5); /* White border glow */
+    margin: 0; 
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5); 
     flex-shrink: 0;
-   
 }
 .about-grid >:not(img){
-    flex:1;}
-.container-wrapper{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-
+    flex:1;
 }
 
-/* --- 7. SKILLS SECTION LAYOUT (Flexbox) --- */
+
+/* --- 7. SKILLS SECTION LAYOUT (Fixed for Spacing) --- */
 .skills-container {
     display: flex;
     justify-content: center; 
     gap: 30px;
-    flex-wrap:wrap; /* Allows wrapping on smaller screens */
+    flex-wrap:wrap; 
     margin-top: 40px;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-;
 }
 
 .skill-group {
-    flex: 2; /* Allows groups to grow equally */
+    flex: 1; /* FIX: Changed flex from 2 to 1 for equal sharing */
     min-width: 350px;
     background-color: #ffffff;
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     text-align: left;
-    width: 350px;
-    min-height: 250px;
-    font-size: 20px;
-    box-sizing: content-box;
+    /* Removed fixed width, min-height, and font-size overrides */
+    box-sizing: border-box; 
 }
 
 .skill-group ul li::before {
-    content: "•"; /* Custom bullet point for lists */
+    content: "•"; 
     color: #ce4257;
     font-weight: bold;
     display: inline-block; 
@@ -254,8 +253,8 @@ nav a.nav-link:hover {
 /* --- 8. PROJECTS SECTION LAYOUT (CSS Grid) --- */
 .project-list {
     display: grid;
-    /* Two columns on large screens */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    /* Allows 3 columns on large screens and collapses gracefully */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px;
     margin-top: 40px;
     text-align: left;
@@ -273,7 +272,7 @@ nav a.nav-link:hover {
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px); /* Reduced hover lift for smoother feel */
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
@@ -286,7 +285,6 @@ nav a.nav-link:hover {
 }
 
 .project-image-container img {
-    /* Reset image styles for project screenshots */
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -313,16 +311,16 @@ nav a.nav-link:hover {
 }
 
 .completed {
-    background-color: #d4edda; /* Light Green */
-    color: #155724; /* Dark Green */
+    background-color: #d4edda; 
+    color: #155724; 
 }
 
 .in-progress {
-    background-color: #fff3cd; /* Light Yellow */
-    color: #856404; /* Dark Yellow */
+    background-color: #fff3cd; 
+    color: #856404; 
 }
 
-/* --- 9. CONTACT & FOOTER --- */
+/* --- 9. CONTACT & FOOTER (Fixed Footer Size) --- */
 .contact-links {
     margin-top: 40px;
     display: flex;
@@ -348,7 +346,8 @@ nav a.nav-link:hover {
 
 footer {
     text-align: center;
-    font-size: 5rem;
+    /* FIX: Reduced footer font size from 5rem to standard 0.9rem */
+    font-size: 0.9rem; 
     padding: 20px;
     background-color: #432818;
     color: #fff;
@@ -373,7 +372,8 @@ footer {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 1.8rem; }
     .subtitle { font-size: 1.2rem; }
-    p, ul { font-size: 1rem; }
+    /* FIX: Ensuring text sizes are small on mobile */
+    p, ul { font-size: 1rem; } 
     
     .hero-section { padding: 100px 20px 80px; }
     .portfolio-section { padding: 60px 15px; }
