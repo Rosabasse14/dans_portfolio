@@ -1,0 +1,407 @@
+/* --- 1. GLOBAL STYLES & RESET --- */
+*, *::before, *::after {
+    /* Ensures padding and border are included in the element's total width and height */
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Set the default background to a soft off-white (for the alternating pattern) */
+    background-color: #f7f3f0; 
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333; /* Dark, professional text color */
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling for the one-page links */
+}
+
+/* --- 2. TYPOGRAPHY & TEXT STYLES --- */
+h1 {
+    font-size: 3.5rem; /* Use rem for better scaling */
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #432818; 
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ce4257; /* Accent color */
+    font-size: 2.25rem;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+h3 {
+    font-size: 2rem;
+    color: #432818;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.75rem; /* Highly readable base size */
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #432818;
+}
+
+ul {
+    font-size: 1.5rem; 
+    list-style: none; /* Remove default bullets for cleaner list presentation */
+    padding-left: 0; 
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* --- 3. HEADER & NAVIGATION (Sticky Navbar) --- */
+header {
+    background-color: #fff; /* White header for a clean look */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Keeps the navbar visible when scrolling */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between; 
+    
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #432818;
+    transition: color 0.3s;
+    text-align: left;
+    padding: 0px;
+}
+
+.logo:hover {
+    color: #ce4257;
+}
+
+nav a.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #432818;
+    padding: 8px 20px;
+    font-size: 1.75rem;
+    transition: color 0.3s, background-color 0.3s ease;
+    border-radius: 4px;
+    font-weight: 500;
+    text-align: right;
+}
+
+nav a.nav-link:hover {
+    color: #fff;
+    background-color: #ce4257; 
+}
+
+/* --- 4. BUTTON STYLES --- */
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.5s, box-shadow 0.2s;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button.primary {
+    background-color: #ce4257; /* Muted Red */
+    color: #fff;
+    border: none;
+}
+
+.button.secondary {
+    background-color: #432818; /* Dark Brown */
+    color: #fff;
+    border: none;
+    font-size: 0.95rem;
+    margin-top: 15px;
+}
+
+.button.primary:hover, .button.secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(67, 40, 24, 0.2);
+}
+
+
+/* --- 5. SECTION STYLES & COLOR SCHEME --- */
+.portfolio-section {
+    padding: 80px 0;
+    margin: 0 auto;
+}
+
+/* Color 1: Original Light Peach */
+#home {
+    padding: 150px 0;
+    background-color: #ffe5d9; 
+    text-align: center;
+}
+
+#projects {
+    background-color: #ffe5d9; 
+}
+
+/* Color 2: Soft Off-White (Default body color, but explicitly set for About/Contact) */
+#about {
+    background-color: #f7f3f0; 
+}
+#contact {
+    background-color: #f7f3f0;
+}
+
+/* Color 3: Light Sandy Beige */
+#skills {
+    background-color: #e5d9d3;
+    
+}
+
+/* --- 6. ABOUT SECTION LAYOUT (Flexbox Grid) --- */
+.about-grid {
+    display: flex;
+    align-items: center; /* Aligns items to the top of the container */
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 10000px;
+    margin: 0 auto;
+    text-align: left; /* Reset text alignment for paragraphs */
+    padding: 40px 220px;
+    justify-content: space-around;
+}
+.about-grid p{
+    flex-basis: 70%;
+
+}
+
+.about-grid img {
+    /* Override global image styles for the profile photo */
+    width: 500px;
+    height: 500px;
+    border-radius: 50%; /* Makes the profile picture circular */
+    border: 5px solid #ce4257;
+    object-fit:cover;
+    margin: 0 auto; /* Remove auto margins to fit into flex layout */
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5); /* White border glow */
+    flex-shrink: 0;
+   
+}
+.about-grid >:not(img){
+    flex:1;}
+.container-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+/* --- 7. SKILLS SECTION LAYOUT (Flexbox) --- */
+.skills-container {
+    display: flex;
+    justify-content: center; 
+    gap: 30px;
+    flex-wrap:wrap; /* Allows wrapping on smaller screens */
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+;
+}
+
+.skill-group {
+    flex: 2; /* Allows groups to grow equally */
+    min-width: 350px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    width: 350px;
+    min-height: 250px;
+    font-size: 20px;
+    box-sizing: content-box;
+}
+
+.skill-group ul li::before {
+    content: "•"; /* Custom bullet point for lists */
+    color: #ce4257;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+/* --- 8. PROJECTS SECTION LAYOUT (CSS Grid) --- */
+.project-list {
+    display: grid;
+    /* Two columns on large screens */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.project-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-image-container {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.project-image-container img {
+    /* Reset image styles for project screenshots */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.project-meta {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.completed {
+    background-color: #d4edda; /* Light Green */
+    color: #155724; /* Dark Green */
+}
+
+.in-progress {
+    background-color: #fff3cd; /* Light Yellow */
+    color: #856404; /* Dark Yellow */
+}
+
+/* --- 9. CONTACT & FOOTER --- */
+.contact-links {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #ce4257;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+.contact-btn:hover {
+    background-color: #a83547;
+    transform: translateY(-1px);
+}
+
+footer {
+    text-align: center;
+    font-size: 5rem;
+    padding: 20px;
+    background-color: #432818;
+    color: #fff;
+}
+
+/* --- 10. MEDIA QUERIES (RESPONSIVENESS) --- */
+@media (max-width: 900px) {
+    /* For smaller desktops and tablets, collapse the about grid */
+    .about-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .about-grid img {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* General Mobile adjustments */
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 1.8rem; }
+    .subtitle { font-size: 1.2rem; }
+    p, ul { font-size: 1rem; }
+    
+    .hero-section { padding: 100px 20px 80px; }
+    .portfolio-section { padding: 60px 15px; }
+
+    /* Stack navigation */
+    .header-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+    
+    nav {
+        margin-top: 10px;
+    }
+    nav a.nav-link {
+        font-size: 0.9rem;
+        padding: 5px 8px;
+    }
+    
+    /* Project/Skill items will stack vertically */
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-container {
+        gap: 30px;
+    }
+    .skill-group {
+        min-width: 100%;
+        padding: 20px;
+    }
+}
